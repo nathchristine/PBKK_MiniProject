@@ -1,0 +1,359 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    /* Navbar */
+    .navbar {
+        @apply fixed top-0 left-0 right-0 z-40 bg-gray-800 text-white;
+    }
+
+    .navbar-container {
+        @apply mx-auto max-w-7xl px-12 py-6 flex items-center justify-between;
+    }
+
+    .navbar-brand {
+        @apply text-2xl font-semibold;
+    }
+
+    .navbar-avatar {
+        @apply w-8 h-8 rounded-full;
+    }
+
+    .navbar-dropdown {
+        @apply absolute right-0 mt-2 w-40 bg-white text-gray-700 rounded shadow;
+    }
+
+    .navbar-add-btn {
+        @apply glass-btn;
+    }
+
+    /* Movie Card */
+    .movie-card-link {
+        @apply block transition-transform duration-200 hover:scale-105;
+    }
+
+    .movie-card {
+        @apply flex flex-col items-center h-full;
+    }
+
+    .movie-card-cover-wrapper {
+        @apply mb-4;
+    }
+
+    .movie-card-image {
+        @apply w-48 h-72 object-cover rounded-3xl shadow-lg;
+    }
+
+    .movie-card-rating {
+        @apply flex items-center gap-1 text-yellow-400 text-2xl;
+    }
+
+    /* Page Layout */
+    .movies-index-main {
+        @apply pt-[88px];
+    }
+
+    .movies-index-container {
+        @apply max-w-7xl mx-auto px-12 py-8;
+    }
+
+    .page-heading {
+        @apply text-4xl font-bold mb-8 text-white;
+    }
+
+    .movie-grid {
+        @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6;
+    }
+
+    .empty-state {
+        @apply col-span-full opacity-80 text-gray-700 dark:text-gray-300;
+    }
+
+    /* Links */
+    .link-blue {
+        @apply text-blue-600 text-sm hover:underline;
+    }
+
+    .link-green {
+        @apply text-green-600 text-sm hover:underline;
+    }
+
+    .link-red {
+        @apply text-red-600 text-sm hover:underline;
+    }
+
+    .glass-panel {
+        @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-xl rounded-2xl;
+    }
+
+    .glass-input {
+        @apply bg-white/10 border border-white/20 text-white placeholder-white/60 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/30;
+    }
+
+    .glass-btn {
+        @apply text-white bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 shadow px-4 py-2 rounded-lg font-medium transition;
+    }
+
+    /* Form Styles */
+    .form-container {
+        @apply min-h-screen bg-gray-900 pt-[88px] px-12;
+    }
+
+    .form-wrapper {
+        @apply mx-auto max-w-3xl;
+    }
+
+    .form-label {
+        @apply block text-sm mb-1 text-white;
+    }
+
+    .form-input {
+        @apply w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/30;
+    }
+
+    .form-select {
+        @apply w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-white/30;
+    }
+
+    .form-textarea {
+        @apply w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/30;
+    }
+
+    .form-hint {
+        @apply text-xs text-white/60 mt-1;
+    }
+
+    .form-actions {
+        @apply flex items-center gap-3 pt-2;
+    }
+
+    .btn-cancel {
+        @apply px-4 py-2 rounded-lg font-medium transition border border-white/20 hover:bg-white/10 text-white;
+    }
+
+    .error-list {
+        @apply mb-4 text-sm text-red-300;
+    }
+
+    /* Star Rating Styles */
+    .star-rating-container {
+        @apply flex items-center gap-2;
+    }
+
+    .star-wrapper {
+        @apply relative inline-block cursor-pointer;
+        font-size: 2.5rem;
+        line-height: 1;
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .star-full {
+        @apply text-yellow-400 absolute top-0 left-0;
+        width: 0%;
+        overflow: hidden;
+        transition: width 0.2s;
+    }
+
+    .star-empty {
+        @apply text-gray-400;
+    }
+
+    #rating-display {
+        @apply text-white text-base ml-3;
+    }
+
+    /* Movie Detail Page */
+    .movie-detail-main {
+        @apply min-h-screen bg-gray-900 pt-[88px] pb-12;
+    }
+
+    .movie-detail-container {
+        @apply mx-auto max-w-5xl px-4 md:px-6 text-white py-8;
+    }
+
+    .movie-detail-card {
+        @apply glass-panel p-6 md:p-8;
+    }
+
+    .movie-detail-grid {
+        @apply grid md:grid-cols-5 gap-8 items-start;
+    }
+
+    .movie-detail-cover-col {
+        @apply md:col-span-2;
+    }
+
+    .movie-detail-cover-wrapper {
+        @apply rounded-[2rem] overflow-hidden bg-white/10 border border-white/20;
+    }
+
+    .movie-detail-cover-image {
+        @apply w-full h-[540px] object-cover;
+    }
+
+    .movie-detail-info-col {
+        @apply md:col-span-3;
+    }
+
+    .movie-detail-genre-pill {
+        @apply inline-block px-3 py-1 rounded-full text-sm bg-white/10 border border-white/20 backdrop-blur;
+    }
+
+    .movie-detail-title {
+        @apply mt-4 text-4xl font-extrabold tracking-tight;
+    }
+
+    .movie-detail-stars {
+        @apply mt-4 flex items-center text-2xl text-yellow-300;
+    }
+
+    .movie-detail-star {
+        @apply mr-1;
+    }
+
+    .movie-detail-review {
+        @apply mt-6 text-lg leading-relaxed;
+    }
+
+    .movie-detail-actions {
+        @apply mt-8 flex flex-wrap gap-3 justify-end;
+    }
+
+    .btn-back {
+        @apply px-4 py-2 rounded-lg font-medium border border-white/20 bg-white/10 hover:bg-white/20 backdrop-blur transition;
+    }
+
+    .btn-edit {
+        @apply px-4 py-2 rounded-lg font-medium border border-blue-300/40 bg-white/10 hover:bg-white/20 backdrop-blur transition;
+    }
+
+    .btn-delete {
+        @apply px-4 py-2 rounded-lg font-medium border border-red-400/40 bg-red-500/10 hover:bg-red-500/20 backdrop-blur transition;
+    }
+    /* Layout Styles */
+    .app-wrapper {
+        @apply min-h-screen bg-gray-100 dark:bg-gray-900;
+    }
+
+    .page-header {
+        @apply bg-white dark:bg-gray-800 shadow;
+    }
+
+    .page-header-container {
+        @apply max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8;
+    }
+
+    /* Navbar Dropdown */
+    .navbar-dropdown-summary {
+        @apply list-none cursor-pointer flex items-center gap-2;
+    }
+
+    .navbar-dropdown-summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .navbar-logout-btn {
+        @apply w-full text-left px-3 py-2 hover:bg-gray-100 rounded;
+    }
+
+    /* Form Panel */
+    .form-panel {
+        @apply glass-panel p-6 sm:p-8 text-white;
+    }
+
+    .form-error-list {
+        @apply list-disc list-inside space-y-1;
+    }
+
+    /* Welcome Page */
+    .welcome-body {
+        @apply min-h-screen bg-gray-900 text-white;
+    }
+
+    .welcome-main {
+        @apply min-h-screen flex items-center justify-center px-4;
+    }
+
+    .welcome-card {
+        @apply w-full max-w-2xl glass-panel p-8 sm:p-12 text-center;
+    }
+
+    .welcome-title {
+        @apply text-3xl sm:text-4xl font-extrabold tracking-tight;
+    }
+
+    .welcome-description {
+        @apply mt-4 text-white/70;
+    }
+
+    .welcome-actions {
+        @apply mt-8 flex flex-wrap items-center justify-center gap-3;
+    }
+
+    .welcome-btn {
+        @apply glass-btn px-5 py-2.5;
+    }
+
+    /* Auth Pages (Login & Register) */
+    .auth-body {
+        @apply min-h-screen bg-gray-900 text-white;
+    }
+
+    .auth-main {
+        @apply min-h-screen flex items-center justify-center px-4;
+    }
+
+    .auth-card {
+        @apply w-full max-w-md glass-panel p-6 sm:p-8;
+    }
+
+    .auth-title {
+        @apply text-2xl font-semibold mb-6;
+    }
+
+    .auth-form {
+        @apply space-y-4;
+    }
+
+    .auth-label {
+        @apply block text-sm mb-1;
+    }
+
+    .auth-input {
+        @apply w-full glass-input px-3 py-2 placeholder-white/50;
+    }
+
+    .auth-checkbox {
+        @apply h-4 w-4 rounded border-white/30 bg-white/10;
+    }
+
+    .auth-checkbox-label {
+        @apply flex items-center gap-2 text-sm text-white/80;
+    }
+
+    .auth-link {
+        @apply text-sm text-white/70 hover:text-white underline;
+    }
+
+    .auth-actions {
+        @apply flex items-center justify-between pt-2;
+    }
+
+    .auth-status {
+        @apply mb-4 text-sm text-green-300;
+    }
+
+    .auth-errors {
+        @apply mb-4 text-sm text-red-300;
+    }
+
+    .auth-error-list {
+        @apply list-disc list-inside space-y-1;
+    }
+
+    .auth-remember-row {
+        @apply flex items-center justify-between;
+    }
+}
